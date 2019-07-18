@@ -6,7 +6,7 @@ RUN apk update \
 	&& mkdir -p $GOPATH/src/simpleweb
 
 # Copy in the source and the upx binary compression tool
-COPY ./src/main.go $GOPATH/src/simpleweb
+COPY ./src/* $GOPATH/src/simpleweb/
 COPY ./bin/upx /bin/upx
 
 # Compile the go app
@@ -23,11 +23,12 @@ RUN ls -alh /bin/simple*
 # Reset back to a scratch image and copy in the 2 binaries from the original image
 # Local image size is 9.63M with 9.2M being the application itself and roughly 430k for the container OS
 FROM scratch
-COPY --from=build /bin/simpleweb /simpleweb
-COPY --from=build /bin/simpleweb-big /bin/simpleweb-big
+COPY --from=build /bin/simpleweb /bin/simpleweb
+
+#COPY --from=build /bin/simpleweb-big /bin/simpleweb-big
 
 # Expose the web server port
 EXPOSE 8088
 
 # Make the binary the entrypoint for the container
-ENTRYPOINT ["/simpleweb"]
+ENTRYPOINT ["/bin/simpleweb"]
