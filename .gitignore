@@ -1,2 +1,5 @@
 simple-web/bin/*
 !simple-web/bin/README.md
+
+getting-started/bin/*
+!getting-started/bin/README.md
