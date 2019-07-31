@@ -13,7 +13,7 @@ else
 	exit 1
 fi
 
-CMD="go build -v -o ${MYDIR}/bin/${BUILD_BASE}-${GOOS}"
+CMD="go build -v -o ${MYDIR}/bin/${BIN_BASE}-${GOOS}"
 
 echo "Running: $CMD"
 eval "$CMD"
