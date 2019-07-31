@@ -1,0 +1,2 @@
+simple-web/bin/*
+!simple-web/bin/README.md

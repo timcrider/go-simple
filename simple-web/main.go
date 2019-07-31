@@ -11,5 +11,6 @@ func main() {
 		fmt.Fprintf(w, "Hello, you've requested: %s\n", r.URL.Path)
 	})
 
+	fmt.Println("Binding server to port 8088")
 	http.ListenAndServe(":8088", nil)
 }
