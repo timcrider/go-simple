@@ -2,6 +2,7 @@
 MYDIR="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 
 cd $MYDIR
+BIN_BASE="simpleweb"
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
 	GOOS="linux"
@@ -12,7 +13,7 @@ else
 	exit 1
 fi
 
-CMD="go build -v -o ${MYDIR}/bin/simpleweb-${GOOS}"
+CMD="go build -v -o ${MYDIR}/bin/${BUILD_BASE}-${GOOS}"
 
 echo "Running: $CMD"
 eval "$CMD"

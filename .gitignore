@@ -1,5 +1,9 @@
+getting-started/bin/*
+!getting-started/bin/README.md
+
+local-libs/bin/*
+!local-libs/bin/README.md
+
 simple-web/bin/*
 !simple-web/bin/README.md
 
-getting-started/bin/*
-!getting-started/bin/README.md
